@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI-Powered Email Automation</title>
+</head>
+<body>
+    <h1>Generate AI Email</h1>
+    <form action="/generate" method="POST">
+        <label for="prompt">Email Prompt:</label>
+        <input type="text" id="prompt" name="prompt" required>
+        <button type="submit">Generate Email</button>
+    </form>
+
+    <h2>Generated Email:</h2>
+    <form action="/send" method="POST">
+        <label for="recipient">Recipient:</label>
+        <input type="email" id="recipient" name="recipient" required>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <textarea name="email_body">{{ email_body }}</textarea>
+        <button type="submit">Send Email</button>
+    </form>
+
+    <h2>Schedule Email:</h2>
+    <form action="/schedule" method="POST">
+        <label for="time">Send Time (HH:MM):</label>
+        <input type="text" id="time" name="time" required>
+        <button type="submit">Schedule Email</button>
+    </form>
+</body>
+</html>
